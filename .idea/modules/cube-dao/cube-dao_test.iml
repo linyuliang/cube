@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":cube-dao:test" external.linked.project.path="$MODULE_DIR$/../../../cube-dao" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.lyl.cube" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../../cube-dao/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../cube-dao/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../cube-dao/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../cube-dao/src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="cube-dao_main" />
+    <orderEntry type="module" module-name="cube-entity_main" />
+    <orderEntry type="library" name="Gradle: com.baomidou:mybatis-plus:2.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.baomidou:mybatisplus-spring-boot-starter:1.0.4" level="project" />
+    <orderEntry type="module" module-name="cube-core_main" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis-spring:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis:3.4.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jsqlparser:jsqlparser:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:1.5.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:1.5.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.3.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:4.3.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:4.3.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.3.10.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.3.10.RELEASE" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="cube-dao_main" />
+</module>

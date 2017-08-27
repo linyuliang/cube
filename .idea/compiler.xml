@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="cube-core_main" target="1.8" />
+      <module name="cube-core_test" target="1.8" />
+      <module name="cube-dao-generator_main" target="1.8" />
+      <module name="cube-dao-generator_test" target="1.8" />
+      <module name="cube-dao_main" target="1.8" />
+      <module name="cube-dao_test" target="1.8" />
+      <module name="cube-entity_main" target="1.8" />
+      <module name="cube-entity_test" target="1.8" />
+      <module name="cube-generator_main" target="1.8" />
+      <module name="cube-generator_test" target="1.8" />
+      <module name="cube-oauth-server_main" target="1.8" />
+      <module name="cube-oauth-server_test" target="1.8" />
+      <module name="cube-web-sample_main" target="1.8" />
+      <module name="cube-web-sample_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

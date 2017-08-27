@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cube.iml" filepath="$PROJECT_DIR$/cube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-core/cube-core.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-core/cube-core.iml" group="cube-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-core/cube-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-core/cube-core_main.iml" group="cube-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-core/cube-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-core/cube-core_test.iml" group="cube-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-dao/cube-dao.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-dao/cube-dao.iml" group="cube-dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-dao/cube-dao_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-dao/cube-dao_main.iml" group="cube-dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-dao/cube-dao_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-dao/cube-dao_test.iml" group="cube-dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-entity/cube-entity.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-entity/cube-entity.iml" group="cube-entity" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-entity/cube-entity_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-entity/cube-entity_main.iml" group="cube-entity" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-entity/cube-entity_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-entity/cube-entity_test.iml" group="cube-entity" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-generator/cube-generator.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-generator/cube-generator.iml" group="cube-generator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-generator/cube-generator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-generator/cube-generator_main.iml" group="cube-generator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-generator/cube-generator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-generator/cube-generator_test.iml" group="cube-generator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-oauth-server/cube-oauth-server.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-oauth-server/cube-oauth-server.iml" group="cube-oauth-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-oauth-server/cube-oauth-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-oauth-server/cube-oauth-server_main.iml" group="cube-oauth-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-oauth-server/cube-oauth-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-oauth-server/cube-oauth-server_test.iml" group="cube-oauth-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-web-sample/cube-web-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-web-sample/cube-web-sample.iml" group="cube-web-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-web-sample/cube-web-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-web-sample/cube-web-sample_main.iml" group="cube-web-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cube-web-sample/cube-web-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cube-web-sample/cube-web-sample_test.iml" group="cube-web-sample" />
+    </modules>
+  </component>
+</project>

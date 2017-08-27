@@ -1,0 +1,14 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(':cube-entity')
+    compile("com.baomidou:mybatis-plus:${mybatisPlusVersion}")
+    compile("com.baomidou:mybatisplus-spring-boot-starter:${mybatisplusSpringbootVersion}")
+    compileOnly('org.projectlombok:lombok')
+}

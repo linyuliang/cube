@@ -1,0 +1,70 @@
+subprojects { project ->
+    //CheckStyle settings
+    apply plugin: 'checkstyle'
+    checkstyle {
+        toolVersion '8.0'
+        configFile rootProject.file("config/checkstyle/google_checks.xml")
+        showViolations = true
+        ignoreFailures = true
+        reportsDir = file("$project.buildDir/reports/checkstyle")
+    }
+    tasks.withType(Checkstyle) {
+        reports {
+            xml.enabled false
+            html.enabled true
+        }
+    }
+
+    //Findbugs settings
+    apply plugin: 'findbugs'
+    findbugs {
+        toolVersion = '3.0.1'
+        ignoreFailures = true
+        reportsDir = file("$project.buildDir/reports/findbugs")
+    }
+    tasks.withType(FindBugs) {
+        reports {
+            xml.enabled false
+            html.enabled true
+        }
+    }
+
+    //PMD settings
+    apply plugin: 'pmd'
+    pmd {
+        toolVersion = '5.8.1'
+        ignoreFailures = true
+        reportsDir = file("$project.buildDir/reports/pmd")
+    }
+    tasks.withType(Pmd) {
+        reports {
+            xml.enabled false
+            html.enabled true
+        }
+    }
+
+    //jdepend settings
+    apply plugin: 'jdepend'
+    jdepend {
+        toolVersion = "2.9.1"
+        ignoreFailures = true
+        reportsDir = file("$project.buildDir/reports/jdepend")
+    }
+    tasks.withType(JDepend) {
+	    reports {
+            xml.enabled false
+            text.enabled true
+        }
+	}
+
+    afterEvaluate {
+        check.dependsOn checkstyleMain
+        check.dependsOn checkstyleTest
+        check.dependsOn findbugsMain
+        check.dependsOn findbugsTest
+        check.dependsOn pmdMain
+        check.dependsOn pmdTest
+        check.dependsOn jdependMain
+        check.dependsOn jdependTest
+    }
+}

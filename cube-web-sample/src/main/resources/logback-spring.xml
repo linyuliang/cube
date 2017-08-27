@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+  <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
+  <springProperty scope="context" name="APP_NAME" source="log.name"/>
+  <springProperty scope="context" name="LOG_DIR" source="log.dir"/>
+  <springProperty scope="context" name="ROOT_LOG_LEVEL" source="log.rootLevel"/>
+  <springProperty scope="context" name="log_pattern" source="log.pattern"/>
+  <springProperty scope="context" name="total_size_cap" source="log.totalSizeCap"/>
+  <springProperty scope="context" name="max_file_size" source="log.maxFileSize"/>
+  <springProperty scope="context" name="max_log_history_days" source="log.maxHistory"/>
+
+  <springProfile name="dev">
+    <property name="LOG_DIR" value="${BUILD_FOLDER:-build}"/>
+  </springProfile>
+
+  <!-- 可以加入打印文件行数，但是会影响运行效率 %file:%line -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${log_pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_DIR}/${APP_NAME}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_DIR}/${APP_NAME}-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+      <maxHistory>${max_log_history_days}</maxHistory>
+      <totalSizeCap>${total_size_cap}</totalSizeCap>
+      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>${max_file_size}</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${log_pattern}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+  <!-- 异步输出 -->
+  <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+    <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+    <discardingThreshold>20</discardingThreshold>
+    <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+    <queueSize>2048</queueSize>
+    <includeCallerData>true</includeCallerData>
+    <neverBlock>true</neverBlock>
+    <!-- 停应用时最多等待多少毫秒处理queue中日志,暂定7秒 -->
+    <maxFlushTime>7000</maxFlushTime>
+    <!-- 添加附加的appender,最多只能添加一个 -->
+    <appender-ref ref="FILE"/>
+  </appender>
+
+  <!--<logger name="com.lyl" level="${ROOT_LOG_LEVEL:-WARN}" additivity="false">-->
+    <!--<appender-ref ref="ASYNC_FILE" />-->
+    <!--<springProfile name="dev">-->
+      <!--<appender-ref ref="STDOUT" />-->
+    <!--</springProfile>-->
+  <!--</logger>-->
+
+  <!-- 开始日志级别配置 BEGIN -->
+  <root level="${ROOT_LOG_LEVEL:-WARN}">
+    <springProfile name="dev">
+      <appender-ref ref="ASYNC_FILE" />
+      <appender-ref ref="STDOUT" />
+    </springProfile>
+    <springProfile name="prod">
+      <appender-ref ref="ASYNC_FILE" />
+    </springProfile>
+  </root>
+</configuration>

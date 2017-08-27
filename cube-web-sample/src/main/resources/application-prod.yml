@@ -1,0 +1,51 @@
+spring:
+  profiles: prod
+
+  # DATA SOURCE
+  datasource:
+      url: jdbc:mariadb://localhost:3306/cube?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: 123456
+      driver-class-name: org.mariadb.jdbc.Driver
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: false
+      validationQuery: SELECT 1
+      validationInterval: 30000
+      timeBetweenEvictionRunsMillis: 5000
+      maxActive: 100
+      minIdle: 10
+      maxIdle: 10
+      maxWait: 10000
+      initialSize: 10
+      removeAbandonedTimeout: 60
+      removeAbandoned: true
+      logAbandoned: true
+      minEvictableIdleTimeMillis: 30000
+      jmxEnabled: true
+      jdbcInterceptors: org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReportJmx(threshold=10000)
+  # REDIS
+  redis:
+    database: 0
+    host: localhost
+    password:
+    # url: redis://user:password@example.com:6379
+    port: 6379
+    pool:
+      max-idle: 200
+      min-idle: 0
+      max-active: 300
+      max-wait: -1
+      timeout: 0
+
+# LOG
+logging:
+  config: classpath:logback-spring.xml
+log:
+  name: cube-web-sample
+  dir: /home/cube/logs
+  rootLevel: WARN
+  pattern: %date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+  totalSizeCap: 5GB
+  maxFileSize: 50MB
+  maxHistory: 100

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":cube-generator:main" external.linked.project.path="$MODULE_DIR$/../../../cube-generator" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.lyl.cube" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../../cube-generator/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../cube-generator/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../cube-generator/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../cube-generator/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: com.baomidou:mybatis-plus:2.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.velocity:velocity:1.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis-spring:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mybatis:mybatis:3.4.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jsqlparser:jsqlparser:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.4" level="project" />
+  </component>
+</module>

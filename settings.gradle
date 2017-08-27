@@ -1,0 +1,6 @@
+include 'cube-web-sample'
+include 'cube-oauth-server'
+include 'cube-core'
+include 'cube-entity'
+include 'cube-dao'
+include 'cube-generator'
