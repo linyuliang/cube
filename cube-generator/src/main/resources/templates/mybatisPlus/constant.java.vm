@@ -1,0 +1,27 @@
+#parse("/templates/mybatisPlus/func.vm")
+package
+
+  $!package.get("constant");
+
+/**
+ * <p>
+ * $!{table.comment} 表对应的常量类
+ * </p>
+ *
+ * @author ${cfg.author}
+ * @E-mail ${cfg.email}
+ * @date ${cfg.createTime}
+ */
+public interface $!table.fileNameMap.get("constant"){
+
+## ----------  BEGIN 字段循环遍历  ----------
+#foreach($field in ${table.fields})
+  #if("$!field.comment" != "")
+  /**
+   * ${field.comment}
+   */
+  #end
+public static final String #upperCase(${field.name}) = "${field.name}";
+#end
+## ----------  END 字段循环遍历  ----------
+    }

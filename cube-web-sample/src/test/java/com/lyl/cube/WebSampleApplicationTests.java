@@ -1,6 +1,9 @@
-package com.lyl.cube.web;
+package com.lyl.cube;
 
 import com.lyl.cube.dao.service.ICityService;
+import com.lyl.cube.entity.City;
+import com.lyl.cube.entity.dataTable.DataPage;
+import com.lyl.cube.entity.dataTable.DataTableRequest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +19,12 @@ public class WebSampleApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		System.out.println(cityService.findByState("CA"));
-	}
-
+    DataTableRequest dtr = new DataTableRequest();
+    dtr.setStart(0);
+    dtr.setLength(10);
+    DataPage<City> citys = cityService.findByState("CA", dtr);
+    citys.getData().forEach(city -> {
+      System.out.println(city);
+    });
+  }
 }

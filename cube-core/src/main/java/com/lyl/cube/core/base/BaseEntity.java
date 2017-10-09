@@ -10,7 +10,9 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @ClassName:BaseModel
  * @Description: 实体类的基础父类，定义基本的toString，hashcode，equals等
  */
-public abstract class BaseModel implements Serializable {
+public abstract class BaseEntity implements Serializable {
+
+  protected static final long serialVersionUID = 1L;
 
   public boolean equals(Object obj) {
     return EqualsBuilder.reflectionEquals(this, obj);

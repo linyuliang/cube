@@ -1,0 +1,77 @@
+package $!package.get("entity");
+
+#foreach($pkg in ${table.importPackages})
+import ${pkg};
+#end
+#if(${entityLombokModel})
+
+import lombok.Data;
+import lombok.experimental.Accessors;
+#end
+
+/**
+ * <p>
+ * $!{table.comment}
+ * </p>
+ *
+ * @author ${cfg.author}
+ * @E-mail ${cfg.email}
+ * @date ${cfg.createTime}
+ */
+#if(${entityLombokModel})
+@Data
+@Accessors(chain = true)
+#end
+#if(${superEntityClass})
+public class ${entity} extends ${superEntityClass} {
+#else
+public class ${entity} implements Serializable{
+#end
+
+## ----------  BEGIN 字段循环遍历  ----------
+#foreach($field in ${table.fields})
+  #if(${field.keyFlag})
+    #set($keyPropertyName=${field.propertyName})
+  #end
+  #if("$!field.comment" != "")
+  /**
+   * ${field.comment}
+   */
+  #end
+  #if(${field.keyFlag})
+  ## 主键
+  @Id
+    #if(${field.generatedKeyInfo})
+    @GeneratedValue(${field.generatedKeyInfo.generatedValue})
+    #end
+  ## 普通字段
+  #end
+private ${field.propertyType} ${field.propertyName};
+#end
+## ----------  END 字段循环遍历  ----------
+
+#if(!${entityLombokModel})
+  #foreach($field in ${table.fields})
+    #if(${field.propertyType.equals("boolean")})
+      #set($getprefix="is")
+    #else
+      #set($getprefix="get")
+    #end
+
+  public ${field.propertyType} ${getprefix}${field.capitalName}(){
+      return ${field.propertyName};
+      }
+
+    #if(${entityBuilderModel})
+    public ${entity} set${field.capitalName}(${field.propertyType} ${field.propertyName}){
+    #else
+    public void set${field.capitalName}(${field.propertyType} ${field.propertyName}) {
+    #end
+      this.${field.propertyName} = ${field.propertyName};
+    #if(${entityBuilderModel})
+        return this;
+    #end
+      }
+  #end
+#end
+    }

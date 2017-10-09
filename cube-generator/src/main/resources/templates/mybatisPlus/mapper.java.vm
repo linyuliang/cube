@@ -1,0 +1,22 @@
+package
+
+  $!package.get("mapper");
+
+import $!package.get("entity").${entity};
+import ${superMapperClassPackage};
+
+/**
+ * <p>
+ * $!{table.comment} Mapper 接口
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+public interface $!table.fileNameMap.get("mapper") extends${superMapperClass}<${entity}> {
+#if(${table.keyIdentityPropertyName})
+@Options(useGeneratedKeys = true, keyProperty = "${table.keyIdentityPropertyName}")
+@InsertProvider(type = SpecialProvider.class, method = "dynamicSQL")
+  int insertList(List<T> recordList);
+#end
+    }

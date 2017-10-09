@@ -8,5 +8,7 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(':cube-core')
+    compile group: 'javax.persistence', name: 'persistence-api', version: persistenceApiVersion
+    compile('org.springframework.data:spring-data-commons')
     compileOnly('org.projectlombok:lombok')
 }

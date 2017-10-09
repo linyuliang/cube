@@ -1,0 +1,2 @@
+#macro (uncap_first $data)$StringUtils.uncapitalize($data)#end
+#macro (upperCase $data)$StringUtils.upperCase($data)#end

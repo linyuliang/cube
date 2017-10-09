@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="autoGenerator" class="com.baomidou.mybatisplus.generator.AutoGenerator">
+    <!-- 全局 相关配置 -->
+    <property name="globalConfig" ref="globalConfig"/>
+    <!-- 数据源配置 -->
+    <property name="dataSource" ref="dataSourceConfig"/>
+    <!-- 数据库表配置 -->
+    <property name="strategy" ref="strategyConfig"/>
+    <!-- 包 相关配置 -->
+    <property name="packageConfig" ref="packageConfig"/>
+    <!-- 自定义配置 -->
+    <property name="cfg" ref="reverseGeneratedConfig"/>
+  </bean>
+
+  <!-- 全局 相关配置 -->
+  <bean id="globalConfig" class="com.baomidou.mybatisplus.generator.config.GlobalConfig">
+    <!-- 反向生成文件的输出目录 【默认 D 盘根目录】 -->
+    <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+    <!-- 是否覆盖已有文件 默认 false -->
+    <property name="fileOverride" value="true"/>
+    <!-- 是否开启 ActiveRecord 模式 默认 true -->
+    <property name="activeRecord" value="false"/>
+    <!-- 是否在xml中添加二级缓存配置 默认 true -->
+    <property name="enableCache" value="false"/>
+    <!-- 是否开启 BaseResultMap 默认 false -->
+    <property name="baseResultMap" value="true"/>
+    <!-- 是否开启 baseColumnList 默认 false -->
+    <property name="baseColumnList" value="false"/>
+    <!-- 开发人员 -->
+    <property name="author" value="linyuliang"/>
+    <!-- 是否打开输出目录 默认 true -->
+    <property name="open" value="false"/>
+  </bean>
+
+  <!-- 数据源配置 -->
+  <bean id="dataSourceConfig" class="com.baomidou.mybatisplus.generator.config.DataSourceConfig">
+    <!-- MYSQL, ORACLE, SQL_SERVER, POSTGRE_SQL -->
+    <property name="dbType" value="MYSQL"/>
+    <property name="driverName" value="org.mariadb.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://127.0.0.1:3306/cube?characterEncoding=utf8"/>
+    <property name="username" value="root"/>
+    <property name="password" value="admin"/>
+  </bean>
+
+  <!-- 数据库表配置 -->
+  <bean id="strategyConfig" class="com.baomidou.mybatisplus.generator.config.StrategyConfig">
+    <!-- 数据库中表前缀 【数组】，生成实体类似自动去除前缀 -->
+    <property name="tablePrefix">
+      <list>
+        <value>th_</value>
+        <value>t_</value>
+      </list>
+    </property>
+    <!-- 数据库表映射到实体的命名策略
+    nochange：不做任何改变，原样输出
+    underline_to_camel：下划线转驼峰命名 -->
+    <property name="naming" value="underline_to_camel"/>
+    <!-- 自定义继承的 Entity 类全称，带包名 -->
+    <property name="superEntityClass" value="com.lyl.cube.core.base.BaseEntity"/>
+    <!-- 自定义基础的 Entity 类，公共字段 【数组】 -->
+    <!--
+    <property name="superEntityColumns">
+      <set>
+        <value>create_time</value>
+        <value>create_id</value>
+        <value>update_time</value>
+        <value>update_id</value>
+      </set>
+    </property>
+    -->
+    <!--【实体】是否为lombok模型（默认 false）-->
+    <property name="entityLombokModel" value="true"/>
+    <!-- 【实体】是否生成字段常量(值为数据库表中的列名称)（默认 false） -->
+    <property name="entityColumnConstant" value="false"/>
+    <!-- 自定义继承的Controller类全称，带包名 -->
+    <property name="superControllerClass" value="com.lyl.cube.controller.BaseController"/>
+    <!-- 自定义继承的Mapper类全称，带包名 -->
+    <property name="superMapperClass" value="com.lyl.cube.mybatis.BaseMapper"/>
+    <!-- 自定义继承的Service类全称，带包名 -->
+    <property name="superServiceClass" value="com.lyl.cube.mybatis.IService"/>
+
+
+    <!--  需要包含的表名（与 exclude 二选一配置） -->
+    <property name="include">
+      <set>
+        <!--
+        sqlStatement 特殊值：Cloudscape DB2 DB2_MF Derby HSQLDB Informix MySql SqlServer SYBASE JDBC uuid
+        -->
+        <!--mysql 配置-->
+        <bean p:tableName="city"
+          class="com.baomidou.mybatisplus.generator.config.po.GeneratedTableInfo">
+          <property name="generatedKeyInfoMap">
+            <map>
+              <entry key="id">
+                <bean p:sqlStatement="Mysql" p:identity="true"
+                  class="com.baomidou.mybatisplus.generator.config.po.GeneratedKeyInfo"/>
+              </entry>
+            </map>
+          </property>
+        </bean>
+        <!--uuid 配置-->
+        <!--<bean p:tableName="city" class="com.baomidou.mybatisplus.generator.config.po.GeneratedTableInfo">-->
+        <!--<property name="generatedKeyInfoMap">-->
+        <!--<map><entry key="id"><bean p:sqlStatement="uuid" p:identity="true" class="com.baomidou.mybatisplus.generator.config.po.GeneratedKeyInfo" /></entry></map>-->
+        <!--</property>-->
+        <!--</bean>-->
+        <!--oracle 配置-->
+        <!--<bean p:tableName="city" class="com.baomidou.mybatisplus.generator.config.po.GeneratedTableInfo">-->
+        <!--<property name="generatedKeyInfoMap">-->
+        <!--<map><entry key="id"><bean p:sqlStatement="select SEQ_CITY.nextval from dual" p:identity="false" p:type="pre" class="com.baomidou.mybatisplus.generator.config.po.GeneratedKeyInfo" /></entry></map>-->
+        <!--</property>-->
+        <!--</bean>-->
+
+        <bean p:tableName="test"
+          class="com.baomidou.mybatisplus.generator.config.po.GeneratedTableInfo"></bean>
+      </set>
+    </property>
+  </bean>
+
+  <!-- 包 相关配置 -->
+  <bean id="packageConfig" class="com.baomidou.mybatisplus.generator.config.PackageConfig">
+    <property name="packageInfoMap">
+      <map>
+        <entry key="constant">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/constant.java.vm"/>
+            <property name="packageName" value="com.lyl.cube.entity.constant"/>
+            <property name="fileName" value="%sConst"/>
+            <property name="fileSuffix" value=".java"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+          </bean>
+        </entry>
+        <!-- Entity包名 -->
+        <entry key="entity">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/entity.java.vm"/>
+            <property name="packageName" value="com.lyl.cube.entity"/>
+            <property name="fileName" value="%s"/>
+            <property name="fileSuffix" value=".java"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+          </bean>
+        </entry>
+        <!-- Mapper包名 -->
+        <entry key="mapper">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/mapper.java.vm"/>
+            <property name="packageName" value="com.lyl.cube.dao.mapper"/>
+            <property name="fileName" value="%sMapper"/>
+            <property name="fileSuffix" value=".java"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+          </bean>
+        </entry>
+        <!-- Service包名 -->
+        <entry key="service">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/service.java.vm"/>
+            <property name="packageName" value="com.lyl.cube.dao.service"/>
+            <property name="fileName" value="%sService"/>
+            <property name="fileSuffix" value=".java"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+          </bean>
+        </entry>
+        <!-- Service Impl包名 -->
+        <entry key="serviceImpl">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/serviceImpl.java.vm"/>
+            <property name="packageName" value="com.lyl.cube.dao.service.impl"/>
+            <property name="fileName" value="%sServiceImpl"/>
+            <property name="fileSuffix" value=".java"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+          </bean>
+        </entry>
+        <!-- Controller包名 -->
+        <entry key="controller">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/controller.java.vm"/>
+            <property name="packageName" value="com.lyl.cube.controller"/>
+            <property name="fileName" value="%sController"/>
+            <property name="fileSuffix" value=".java"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/java"/>
+          </bean>
+        </entry>
+        <!-- Mapper XML包名 -->
+        <entry key="xml">
+          <bean class="com.baomidou.mybatisplus.generator.config.po.PackageInfo">
+            <property name="templatePath" value="/templates/mybatisPlus/mapper.xml.vm"/>
+            <property name="packageName" value=""/>
+            <property name="fileName" value="%sMapper"/>
+            <property name="fileSuffix" value=".xml"/>
+            <property name="outputDir" value="E:/cube/mybatisplus/src/main/resources/mapper"/>
+          </bean>
+        </entry>
+      </map>
+    </property>
+  </bean>
+
+  <!-- 注入自定义配置 -->
+  <bean id="reverseGeneratedConfig"
+    class="com.baomidou.mybatisplus.generator.config.CustomGeneConfig">
+    <property name="author" value="linyuliang"/>
+    <property name="email" value="linyuliang.85@gmail.com"/>
+  </bean>
+</beans>

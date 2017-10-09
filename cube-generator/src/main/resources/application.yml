@@ -1,0 +1,33 @@
+spring:
+  freemarker:
+    allow-request-override: false
+    check-template-location: true
+    cache: false
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    #template-loader-path=classpath:/templates/ #comma-separated list
+    #prefix:
+    #suffix: .ftl
+    #request-context-attribute: request
+    #view-names= # whitelist of view names that can be resolved
+    settings:
+      output_encoding: UTF-8
+      locale: zh_CN
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+      datetime_format: yyyy-MM-dd HH:mm:ss
+
+# LOG
+logging:
+  config: classpath:logback-spring.xml
+log:
+  name: cube-generator
+  dir: /home/cube/logs
+  rootLevel: INFO
+  pattern: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
+  totalSizeCap: 5GB
+  maxFileSize: 50MB
+  maxHistory: 100

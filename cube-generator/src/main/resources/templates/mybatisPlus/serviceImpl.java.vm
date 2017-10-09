@@ -1,0 +1,24 @@
+#parse("/templates/mybatisPlus/func.vm")
+package
+
+  $!package.get("serviceImpl");
+
+import $!package.get("entity").${entity};
+import $!package.get("mapper").$!table.fileNameMap.get("mapper");
+import $!package.get("service").$!table.fileNameMap.get("service");
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ * <p>
+ * $!{table.comment} 服务实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+public class $!table.fileNameMap.get("serviceImpl") implements $!table.fileNameMap.get("service")}{
+@Autowired
+$!table.fileNameMap.get("mapper") #uncap_first($!table.fileNameMap.get("mapper"));
+}

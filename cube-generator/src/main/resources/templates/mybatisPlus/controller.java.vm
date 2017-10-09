@@ -1,4 +1,5 @@
-package ${package.Controller};
+package $!package.get("controller");
+
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,9 +27,9 @@ import ${superControllerClassPackage};
 #end
 @RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
 #if(${superControllerClass})
-public class ${table.controllerName} extends ${superControllerClass} {
+public class $!table.fileNameMap.get("controller") extends ${superControllerClass} {
 #else
-public class ${table.controllerName} {
+public class $!table.fileNameMap.get("controller") {
 #end
 
     }

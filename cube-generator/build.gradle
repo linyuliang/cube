@@ -1,4 +1,15 @@
+buildscript {
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
 dependencies {
-    compile("com.baomidou:mybatis-plus:${mybatisPlusVersion}")
-    compile("org.apache.velocity:velocity:${velocityVersion}")
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: commonsLang3Version
+    compile("org.apache.velocity:velocity:$velocityVersion")
+    compile("org.mariadb.jdbc:mariadb-java-client:$mariadbJavaClientVersion")
+    compile group: 'com.baomidou', name: 'mybatis-plus', version: mybatisPlusVersion
 }

@@ -8,7 +8,7 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(':cube-entity')
-    compile("com.baomidou:mybatis-plus:${mybatisPlusVersion}")
-    compile("com.baomidou:mybatisplus-spring-boot-starter:${mybatisplusSpringbootVersion}")
+    compile group: 'tk.mybatis', name: 'mapper-spring-boot-starter', version: mapperSpringBootStarterVersion
+    compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: pagehelperMybatisSpringBootVersion
     compileOnly('org.projectlombok:lombok')
 }
