@@ -472,6 +472,7 @@ public class ConfigBuilder {
   private TableInfo convertTableFields(TableInfo tableInfo, NamingStrategy strategy) {
     List<TableField> fieldList = new ArrayList<>();
     List<TableField> commonFieldList = new ArrayList<>();
+    PreparedStatement preparedStatement = null;
     try {
       String tableFieldsSql = querySQL.getTableFieldsSql();
       if (QuerySQL.POSTGRE_SQL == querySQL) {
@@ -480,7 +481,7 @@ public class ConfigBuilder {
       } else {
         tableFieldsSql = String.format(tableFieldsSql, tableInfo.getName());
       }
-      PreparedStatement preparedStatement = connection.prepareStatement(tableFieldsSql);
+      preparedStatement = connection.prepareStatement(tableFieldsSql);
       ResultSet results = preparedStatement.executeQuery();
       Map<String, GeneratedKeyInfo> generatedKeyInfoMap = tableInfo.getGeneratedKeyInfoMap();
       while (results.next()) {
@@ -528,10 +529,12 @@ public class ConfigBuilder {
     } catch (SQLException e) {
       System.err.println("SQL Exception：" + e.getMessage());
     } finally {
-      try {
-        connection.close();
-      } catch (SQLException e) {
-        System.err.println("SQL Exception：" + e.getMessage());
+      if (preparedStatement != null) {
+        try {
+          preparedStatement.close();
+        } catch (SQLException e) {
+          System.err.println("SQL Exception：" + e.getMessage());
+        }
       }
     }
     tableInfo.setFields(fieldList);
