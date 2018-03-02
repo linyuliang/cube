@@ -10,6 +10,8 @@ public interface BaseMapper<T extends BaseEntity> extends Mapper<T> {
 
   /**
    * 批量插入所有字段，包含id，insertList是id不插入，由数据库自生成
+   * @param recordList 对象的List
+   * @return 插入的结果个数
    */
   @InsertProvider(type = InsertBatchProvider.class, method = "dynamicSQL")
   int insertListWithAllColumns(List<T> recordList);

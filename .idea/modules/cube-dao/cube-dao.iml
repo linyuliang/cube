@@ -5,7 +5,6 @@
     <content url="file://$MODULE_DIR$/../../../cube-dao">
       <excludeFolder url="file://$MODULE_DIR$/../../../cube-dao/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../cube-dao/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../cube-dao/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,4 +1,4 @@
-package com.lyl.cube.entity.dataTable;
+package com.lyl.cube.entity.datatable;
 
 import com.lyl.cube.core.base.BaseEntity;
 import java.util.List;

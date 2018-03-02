@@ -1,4 +1,4 @@
-package com.lyl.cube.entity.dataTable;
+package com.lyl.cube.entity.datatable;
 
 import java.util.ArrayList;
 import java.util.HashMap;

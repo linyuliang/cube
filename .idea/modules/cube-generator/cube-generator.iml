@@ -5,7 +5,6 @@
     <content url="file://$MODULE_DIR$/../../../cube-generator">
       <excludeFolder url="file://$MODULE_DIR$/../../../cube-generator/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../cube-generator/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../cube-generator/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

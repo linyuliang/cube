@@ -1,4 +1,4 @@
-package com.lyl.cube.entity.dataTable;
+package com.lyl.cube.entity.datatable;
 
 /**
  * User: Ray Date: 2014/8/6 Time: 20:40

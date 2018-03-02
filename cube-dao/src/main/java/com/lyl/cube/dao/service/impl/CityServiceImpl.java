@@ -5,8 +5,8 @@ import com.github.pagehelper.PageHelper;
 import com.lyl.cube.dao.mapper.CityMapper;
 import com.lyl.cube.dao.service.ICityService;
 import com.lyl.cube.entity.City;
-import com.lyl.cube.entity.dataTable.DataPage;
-import com.lyl.cube.entity.dataTable.DataTableRequest;
+import com.lyl.cube.entity.datatable.DataPage;
+import com.lyl.cube.entity.datatable.DataTableRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

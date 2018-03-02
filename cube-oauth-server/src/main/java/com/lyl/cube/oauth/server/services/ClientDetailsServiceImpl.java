@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppClientDetailsService implements ClientDetailsService {
+public class ClientDetailsServiceImpl implements ClientDetailsService {
 
   @Override
   public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {

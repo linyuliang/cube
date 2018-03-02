@@ -5,7 +5,6 @@
     <content url="file://$MODULE_DIR$/../../../cube-core">
       <excludeFolder url="file://$MODULE_DIR$/../../../cube-core/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../cube-core/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../cube-core/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

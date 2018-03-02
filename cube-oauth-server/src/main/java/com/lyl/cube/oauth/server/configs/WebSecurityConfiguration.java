@@ -1,7 +1,7 @@
 package com.lyl.cube.oauth.server.configs;
 
 
-import com.lyl.cube.oauth.server.services.AppUserDetailsService;
+import com.lyl.cube.oauth.server.services.UserDetailsServiceImpl;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -20,7 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
   @Autowired
-  private AppUserDetailsService userDetailsService;
+  private UserDetailsService userDetailsService;
 
   @Bean
   public PasswordEncoder passwordEncoder() {
